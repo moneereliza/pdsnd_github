@@ -1,16 +1,36 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Jan  6 15:18:41 2023
+"""Created: Fri Jan 6 2023 at time stamp 15:18:41
+author: Moneer 
+course: Udacity: Programming for Data Science with Python
+project: Bikeshare project
+necessary files: chicago.csv, new_york_city.csv, washington.csv
 
-@author: Moneer Hajiazimi
+Reference README.md file for further details
 """
 
 import time
 import pandas as pd
 
+# Define names of cities relative to their respective source file
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
+
+def main(): 
+    """ Contains all functions needed to fully execute bikeshare code. """
+    while True:
+        city, month, day = get_filters()
+        df = load_data(city, month, day)
+
+        time_stats(df)
+        station_stats(df)
+        trip_duration_stats(df)
+        user_stats(df)
+        raw_data(df)
+
+        restart = input('\nWould you like to restart? Enter yes or no.\n')
+        if restart.lower() != 'yes':
+            break
 
 def get_filters():
     """
@@ -25,19 +45,19 @@ def get_filters():
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
 
     city = input("\nWhich of the following cities would you like to view data for? New York City, Chicago or Washington?\n").lower()
-    while city not in ('new york city', 'chicago', 'washington'):
+    if city not in ('new york city', 'chicago', 'washington'):
         city = input("\nSorry, I don't recognize that input, please try again.\n").lower()
 
     # get user input for month (all, january, february, ... , june)
 
     month = input("\nWould you like to apply a month filter? If yes, enter one of the following: Jan, Feb, Mar, Apr, May, June, or type 'all' if you do not have any preference?\n").lower()
-    while month not in ('jan', 'feb', 'mar', 'apr', 'may', 'june', 'all'):
+    if month not in ('jan', 'feb', 'mar', 'apr', 'may', 'june', 'all'):
         month = input("\nSorry, I don't recognize that input, please try again.\n").lower()
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
 
     day = input("\nWould you like to apply a day filter? If yes, enter one of the following: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or type 'all' if you do not have any preference.\n").lower()
-    while day not in ('sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'all'):
+    if day not in ('sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'all'):
         day = input("\nSorry, I don't recognize that input, please try again.\n").lower()
 
     print('-'*40)
@@ -219,21 +239,6 @@ def raw_data(df):
             print('Done!')
             break
 
-def main(): 
-    while True:
-        city, month, day = get_filters()
-        df = load_data(city, month, day)
-
-        time_stats(df)
-        station_stats(df)
-        trip_duration_stats(df)
-        user_stats(df)
-        raw_data(df)
-
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
-            break
-
-
+# call main() to execute code
 if __name__ == "__main__":
 	main()
