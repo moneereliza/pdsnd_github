@@ -8,6 +8,7 @@ Created on Fri Jan  6 15:18:41 2023
 import time
 import pandas as pd
 
+# Define names of cities relative to their respective source file
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
