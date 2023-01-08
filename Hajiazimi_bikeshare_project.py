@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Jan  6 15:18:41 2023
+"""Created: Fri Jan 6 2023 at time stamp 15:18:41
+author: Moneer 
+course: Udacity: Programming for Data Science with Python
+project: Bikeshare project
+necessary files: chicago.csv, new_york_city.csv, washington.csv
 
-@author: Moneer Hajiazimi
+Reference README.md file for further details
 """
 
 import time
