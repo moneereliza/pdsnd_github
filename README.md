@@ -7,7 +7,11 @@
 Bikeshare Project
 
 ### Description
-Hajiazimi_bikeshare_project.py reads in data from 3 csv files of data, one for each city being analyzed: new york city, washington, and chicago. The program then statistical computes many aspects of the trip data, such as the most popular pickup and dropoff locations, most common day of the week or month, and demographic tracking such as most common gender or birth year of customer.
+Hajiazimi_bikeshare_project.py reads in data from 3 different csv files of data, one for each of the cities being analyzed: new york city, washington, and chicago. The program then statistically computes many aspects of the trip data, including:
+-most frequent stations and trips (i.e. most popular pickup and dropoff locations)
+-most frequent times of travel (i.e. most common day of the week or month)
+-total and average trip duration
+-demographic tracking (i.e. most common gender or birth year of customer)
 
 ### Files used
 chicago.csv
